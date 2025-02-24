@@ -1,12 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 import { cn } from "@/utils/cn";
 import { HTMLMotionProps, motion } from "framer-motion";
-import { div } from "framer-motion/client";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium min-w-[100px]",
