@@ -1,6 +1,5 @@
 import FlipButton from "@/components/btnFlip";
 import { Button } from "@/components/button";
-import { div } from "framer-motion/client";
 
 export default function Home() {
   return (
@@ -37,9 +36,6 @@ export default function Home() {
         <Button variant="default" animationVariant="rotate">
           rotate
         </Button>
-        {/* <Button variant="default" animationVariant="flip">
-          flip
-        </Button> */}
         <FlipButton />
       </div>
     </div>
