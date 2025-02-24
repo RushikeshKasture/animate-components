@@ -39,7 +39,7 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends Omit<HTMLMotionProps<"button">, "ref">,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+  // asChild?: boolean;
   animationVariant?:
     | "fade"
     | "slideTop"
@@ -135,14 +135,14 @@ const MotionButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       variant,
       size,
-      asChild = false,
+      // asChild = false,
       animationVariant = "scale",
       ...props
     },
     ref
   ) => {
     // const Comp = asChild ? Slot : motion.button;
-    const motionProps = asChild ? {} : getMotionProps(animationVariant);
+    // const motionProps = asChild ? {} : getMotionProps(animationVariant);
     return (
       <div>
         <motion.button
@@ -151,7 +151,7 @@ const MotionButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           {...props}
           // {...(asChild ? {} : (motionProps as any))}
           // {...(motionProps as any)}
-          {...(getMotionProps(animationVariant) as any)}
+          {...getMotionProps(animationVariant)}
         />
         <motion.div
           initial={{ boxShadow: "0px 0px #000" }}
