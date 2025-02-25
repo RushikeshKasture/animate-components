@@ -1,4 +1,5 @@
 import FlipButton from "@/components/btnFlip";
+import SlideButton from "@/components/btnSlide";
 import BtnSparkle from "@/components/btnSparkle";
 import { Button } from "@/components/button";
 
@@ -42,6 +43,7 @@ export default function Home() {
       <div className="flex items-center flex-col gap-4 justify-center m-4">
         <h4>complex animations</h4>
         <BtnSparkle>Stars</BtnSparkle>
+        <SlideButton />
       </div>
     </div>
   );
