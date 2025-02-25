@@ -1,4 +1,5 @@
 import FlipButton from "@/components/btnFlip";
+import BtnSparkle from "@/components/btnSparkle";
 import { Button } from "@/components/button";
 
 export default function Home() {
@@ -37,6 +38,10 @@ export default function Home() {
           rotate
         </Button>
         <FlipButton />
+      </div>
+      <div className="flex items-center flex-col gap-4 justify-center m-4">
+        <h4>complex animations</h4>
+        <BtnSparkle>Stars</BtnSparkle>
       </div>
     </div>
   );
