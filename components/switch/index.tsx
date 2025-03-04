@@ -3,30 +3,30 @@
 import { Switch } from "./Switch";
 
 export default function SwitchDemo() {
-  const variantOptions = [
-    "default",
-    "large",
-    "small",
-    "pill",
-    "square",
-    "slim",
-    "ios",
-    "material",
-  ];
+  //   const variantOptions = [
+  //     "default",
+  //     "large",
+  //     "small",
+  //     "pill",
+  //     "square",
+  //     "slim",
+  //     "ios",
+  //     "material",
+  //   ];
 
-  const animationOptions = [
-    "default",
-    "bounce",
-    "scale",
-    "rotate",
-    "fade",
-    "elastic",
-    "pulse",
-    "shake",
-    "flip",
-    "jelly",
-    "glow",
-  ];
+  //   const animationOptions = [
+  //     "default",
+  //     "bounce",
+  //     "scale",
+  //     "rotate",
+  //     "fade",
+  //     "elastic",
+  //     "pulse",
+  //     "shake",
+  //     "flip",
+  //     "jelly",
+  //     "glow",
+  //   ];
 
   return (
     <div className="flex flex-col items-center space-y-8 p-8 bg-gray-50 rounded-lg">
