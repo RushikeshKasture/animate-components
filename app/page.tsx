@@ -24,6 +24,12 @@ export default function Home() {
       >
         Avatar
       </button>
+      <button
+        className="p-4 text-md bg-blue-500 hover:bg-blue-300 rounded"
+        onClick={() => router.push("/switch")}
+      >
+        Switch
+      </button>
     </div>
   );
 }
