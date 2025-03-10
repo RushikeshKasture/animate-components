@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 const animationVariants = {
@@ -292,36 +292,32 @@ export interface AvatarProps
   animation?: AnimationType | null;
 }
 
-const MotionAvatarRoot = motion<
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
->(AvatarPrimitive.Root);
+const MotionAvatarRoot = motion(AvatarPrimitive.Root as React.ElementType);
 
-const Avatar = React.forwardRef<
-  React.ComponentRef<typeof AvatarPrimitive.Root>,
-  AvatarProps
->(({ className, variant = "default", animation = null, ...props }, ref) => {
-  const animationConfig = animation ? animationVariants[animation] : null;
+const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
+  ({ className, variant = "default", animation = null, ...props }, ref) => {
+    const animationConfig = animation ? animationVariants[animation] : null;
 
-  const motionProps = {
-    ...(animationConfig?.initial && { initial: animationConfig.initial }),
-    ...(animationConfig &&
-      "animate" in animationConfig && { animate: animationConfig.animate }),
-    ...(animationConfig &&
-      "whileHover" in animationConfig && {
-        whileHover: animationConfig.whileHover,
-      }),
-  };
+    const motionProps: HTMLMotionProps<"div"> = {
+      ...(animationConfig?.initial && { initial: animationConfig.initial }),
+      ...(animationConfig &&
+        "animate" in animationConfig && { animate: animationConfig.animate }),
+      ...(animationConfig &&
+        "whileHover" in animationConfig && {
+          whileHover: animationConfig.whileHover,
+        }),
+    };
 
-  return (
-    <MotionAvatarRoot
-      ref={ref}
-      className={cn(avatarVariants[variant], className)}
-      // style={additionalStyles}
-      {...motionProps}
-      {...props}
-    />
-  );
-});
+    return (
+      <MotionAvatarRoot
+        ref={ref}
+        className={cn(avatarVariants[variant], className)}
+        {...motionProps}
+        {...props}
+      />
+    );
+  }
+);
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
 const AvatarImage = React.forwardRef<
@@ -353,10 +349,10 @@ AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
 // Inner container for gradient variant
 const AvatarInner = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLSpanElement,
+  React.HTMLAttributes<HTMLSpanElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <span
     ref={ref}
     className={cn(
       "flex h-full w-full rounded-[inherit] overflow-hidden bg-background",
