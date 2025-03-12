@@ -41,6 +41,12 @@ export default function Home() {
           >
             Bneto Grid
           </button>
+          <button
+            className="px-4 py-2 text-md bg-blue-500 hover:bg-blue-300 rounded"
+            onClick={() => router.push("/card")}
+          >
+            Card
+          </button>
         </div>
       </div>
     </>
