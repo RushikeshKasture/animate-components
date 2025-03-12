@@ -185,9 +185,15 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     },
     ref
   ) => {
-    const Comp = asChild ? Slot : motion.div;
+    const Comp = asChild
+      ? Slot
+      : (motion.div as React.ComponentType<
+          React.HTMLAttributes<HTMLDivElement> & {
+            ref: React.Ref<HTMLDivElement>;
+          }
+        >);
 
-    const motionProps: any = animationVariant
+    const motionProps = animationVariant
       ? {
           initial: initiallyVisible ? "visible" : "hidden",
           animate: "visible",

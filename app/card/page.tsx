@@ -3,7 +3,6 @@
 import { useState } from "react";
 import {
   Check,
-  ArrowRight,
   Sparkles,
   ImageIcon,
   Star,
