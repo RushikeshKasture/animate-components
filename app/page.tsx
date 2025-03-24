@@ -47,6 +47,12 @@ export default function Home() {
           >
             Card
           </button>
+          <button
+            className="px-4 py-2 text-md bg-blue-500 hover:bg-blue-300 rounded"
+            onClick={() => router.push("/dialog")}
+          >
+            Dialog/Modal
+          </button>
         </div>
       </div>
     </>
