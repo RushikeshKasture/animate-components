@@ -10,10 +10,10 @@ import type { Variants } from "framer-motion";
 export type AnimationType =
   | "fade"
   | "scale"
-  | "slide-up"
-  | "slide-down"
-  | "slide-left"
-  | "slide-right"
+  | "slideUp"
+  | "slideDown"
+  | "slideLeft"
+  | "slideRight"
   | "rotate"
   | "flip"
   | "bounce";
@@ -37,22 +37,22 @@ export const animationVariants: Record<AnimationType, Variants> = {
     animate: { opacity: 1, scale: 1 },
     exit: { opacity: 0, scale: 0.9 },
   },
-  "slide-up": {
+  slideUp: {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 20 },
   },
-  "slide-down": {
+  slideDown: {
     initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -20 },
   },
-  "slide-left": {
+  slideLeft: {
     initial: { opacity: 0, x: 20 },
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: 20 },
   },
-  "slide-right": {
+  slideRight: {
     initial: { opacity: 0, x: -20 },
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: -20 },
@@ -205,7 +205,7 @@ const DialogContent = React.forwardRef<
           "duration-200",
           modalStyles,
           modalVariant === "modal" &&
-            "left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]",
+            "left-[35%] top-[50%] translate-x-[-50%] translate-y-[-50%]",
           className
         )}
         {...props}
