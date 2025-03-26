@@ -11,7 +11,6 @@ import {
   SelectValue,
 } from "@/src/components/ui/select";
 import { Slider } from "@/src/components/ui/slider";
-import { Star } from "lucide-react";
 
 export default function SeparatorDemo() {
   const [animationType, setAnimationType] = useState<
@@ -20,10 +19,9 @@ export default function SeparatorDemo() {
   const [orientation, setOrientation] = useState<"horizontal" | "vertical">(
     "horizontal"
   );
-  const [variant, setVariant] = useState<string>("solid");
+
   const [duration, setDuration] = useState(0.5);
   const [delay, setDelay] = useState(0);
-  const [thickness, setThickness] = useState(1);
   const [key, setKey] = useState(0);
 
   const resetAnimation = () => {
@@ -40,7 +38,11 @@ export default function SeparatorDemo() {
             <p>Animation Type</p>
             <Select
               value={animationType}
-              onValueChange={(value) => setAnimationType(value as any)}
+              onValueChange={(value) =>
+                setAnimationType(
+                  value as "none" | "fade" | "grow" | "slide" | "pulse"
+                )
+              }
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select animation" />
@@ -59,7 +61,9 @@ export default function SeparatorDemo() {
             <p>Orientation</p>
             <Select
               value={orientation}
-              onValueChange={(value) => setOrientation(value as any)}
+              onValueChange={(value) =>
+                setOrientation(value as "horizontal" | "vertical")
+              }
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select orientation" />
