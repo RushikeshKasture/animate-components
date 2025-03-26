@@ -53,6 +53,12 @@ export default function Home() {
           >
             Dialog/Modal
           </button>
+          <button
+            className="px-4 py-2 text-md bg-blue-500 hover:bg-blue-300 rounded"
+            onClick={() => router.push("/seperator")}
+          >
+            Seperator/Divider
+          </button>
         </div>
       </div>
     </>
